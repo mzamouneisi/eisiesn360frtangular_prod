@@ -14,15 +14,17 @@
 // https://esn360.azurewebsites.net/esn360/
 
 const urlLocal = 'http://localhost:8080/esn360/'
-const urlAzure = 'https://esn360.azurewebsites.net/esn360/'
+const url_dev = 'https://esn360-backend-dev.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io/esn360/'
+const url_main = url_dev 
+const url_prod = 'https://esn360-backend-prod.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io/esn360/'
 // const myUrl = urlAzure
-const myUrl = urlLocal
+const url = urlLocal
 
 export const environment = {
   production: true,
-  apiUrl: myUrl + 'api',
+  apiUrl: url + 'api',
   // apiUrl: urlAzure + 'api',
-  divUrl: myUrl + 'div',
+  divUrl: url + 'div',
   // divUrl: urlAzure + 'div',
   urlFront: 'http://localhost:4200',
 };
