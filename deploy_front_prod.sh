@@ -39,13 +39,13 @@ log() {
 
 save_envs() {
     log "Saving environment files..."
-    # cp $DIR_SRC/environments/environment.ts $DIR_SRC/environments/environment.ts.back
+    cp $DIR_ENV/environment.ts $DIR_ENV/environment.ts.back
     cp $DIR_ENV/environment.prod.ts $DIR_ENV/environment.prod.ts.back
 }
 
 back_envs() {
     log "Restoring environment files..."
-    # cp $DIR_SRC/environments/environment.ts.back $DIR_SRC/environments/environment.ts
+    cp $DIR_ENV/environment.ts.back $DIR_ENV/environment.ts
     cp $DIR_ENV/environment.prod.ts.back $DIR_ENV/environment.prod.ts
 }
 
@@ -53,6 +53,7 @@ set_url_prod() {
     log "Setting production URL in environment.prod.ts..."
     # changer la constante url en lui donnant la valeur url_prod
     sed -i 's/const url = .*/const url = url_prod/' $DIR_ENV/environment.prod.ts
+    sed -i 's/const url = .*/const url = url_prod/' $DIR_ENV/environment.ts
 }
 
 save_to_git() {
