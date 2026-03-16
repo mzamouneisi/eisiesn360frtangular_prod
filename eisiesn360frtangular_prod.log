@@ -1,14 +1,19 @@
-[2026-03-16 12:11:37]  Starting deployment of eisiesn360frtangular_prod with comment: correction_url_front
-[2026-03-16 12:11:37]  Fichier de LOG : eisiesn360frtangular_prod.log
-[2026-03-16 12:11:37]  Copying environment files from development...
+[2026-03-16 12:38:46]  Starting deployment of eisiesn360frtangular_prod with comment: correction_url_front
+[2026-03-16 12:38:46]  Fichier de LOG : eisiesn360frtangular_prod.log
+[2026-03-16 12:38:46]  Copying environment files from development...
 Standard copy: Only newer or modified files will be copied.
 sending incremental file list
+src/environments/
+src/environments/environment.prod.ts
+         731 100%    0.00kB/s    0:00:00         731 100%    0.00kB/s    0:00:00 (xfer#1, to-check=772/2307)
+src/environments/environment.ts
+        1437 100%    1.37MB/s    0:00:00        1437 100%    1.37MB/s    0:00:00 (xfer#2, to-check=771/2307)
 
-sent 16534 bytes  received 182 bytes  33432.00 bytes/sec
-total size is 11548931  speedup is 690.89
-[2026-03-16 12:11:37]  Starting deployment process...
-[2026-03-16 12:11:37]  Saving environment files...
-[2026-03-16 12:11:38]  Setting production URL in environment.prod.ts...
+sent 53209 bytes  received 430 bytes  35759.33 bytes/sec
+total size is 37564439  speedup is 700.32
+[2026-03-16 12:38:47]  Starting deployment process...
+[2026-03-16 12:38:47]  Saving environment files...
+[2026-03-16 12:38:47]  Setting production URL in environment.prod.ts...
 
     run build ...
     cmd : npx ng build --configuration production --output-path docs --base-href . 
