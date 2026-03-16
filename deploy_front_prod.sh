@@ -7,7 +7,7 @@ $date_deb $0 $*
 
 set -e
 # faire un trap exit pour appeler back_envs en cas de sortie du script
-trap back_envs EXIT
+# trap back_envs EXIT
 chmod 755 *.sh
 
 usage() {
@@ -73,7 +73,7 @@ deploy() {
     ./build_front.sh
     save_to_git
     # TODO est ce necessaire ici ?
-    back_envs
+    # back_envs
 }
 
 log "Starting deployment of $proj_prod with comment: $comment_save" > $LOG
