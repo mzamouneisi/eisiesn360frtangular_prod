@@ -18,7 +18,7 @@ const url_dev = 'https://esn360-backend-dev.whiteforest-96ad5fb7.francecentral.a
 const url_main = url_dev 
 const url_prod = 'https://esn360-backend-prod.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io/esn360/'
 // const myUrl = urlAzure
-const url = urlLocal
+const url = url_prod
 
 export const environment = {
   production: true,

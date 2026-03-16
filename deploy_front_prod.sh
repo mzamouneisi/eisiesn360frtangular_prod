@@ -7,7 +7,7 @@ $date_deb $0 $*
 
 set -e
 # faire un trap exit pour appeler back_envs en cas de sortie du script
-# trap back_envs EXIT
+trap back_envs EXIT
 chmod 755 *.sh
 
 usage() {
@@ -54,6 +54,10 @@ set_url_prod() {
     # changer la constante url en lui donnant la valeur url_prod
     sed -i 's/const url = .*/const url = url_prod/' $DIR_ENV/environment.prod.ts
     sed -i 's/const url = .*/const url = url_prod/' $DIR_ENV/environment.ts
+
+    # changer la constante urlFront en lui donnant la valeur urlFront_prod
+    sed -i 's/const urlFront = .*/const urlFront = urlFront_prod/' $DIR_ENV/environment.prod.ts
+    sed -i 's/const urlFront = .*/const urlFront = urlFront_prod/' $DIR_ENV/environment.ts
 }
 
 save_to_git() {
@@ -73,7 +77,7 @@ deploy() {
     ./build_front.sh
     save_to_git
     # TODO est ce necessaire ici ?
-    # back_envs
+    back_envs
 }
 
 log "Starting deployment of $proj_prod with comment: $comment_save" > $LOG

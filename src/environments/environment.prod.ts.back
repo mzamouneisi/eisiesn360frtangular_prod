@@ -1,10 +1,10 @@
 
-// const url = "https://esn360.azurewebsites.net"
+// const url = url_prod
 const url_dev = 'https://esn360-backend-dev.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io'
 const url_main = url_dev 
 const url_prod = 'https://esn360-backend-prod.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io'
-const url = url_dev;
-// const url = "http://127.0.0.1:8080"
+const url = url_prod
+// const url = url_prod
 const app = '/esn360/'
 
 export const environment = {
