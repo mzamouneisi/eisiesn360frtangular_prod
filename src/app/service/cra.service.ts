@@ -183,12 +183,19 @@ export class CraService {
   }
 
   majNewCra(cra: Cra, date: Date) {
-    if(cra && cra.id == null && date) {
-      cra.month = date;
-      if(cra.craDays && cra.craDays.length > 0) {
-        cra.craDays.forEach(craDay => {
-          craDay.day = date;
+    if (cra && cra.id == null && date) {
+      let month = this.utils.getDateFirstDay(date);
+      cra.month = month;
+
+      if (cra.craDays && cra.craDays.length > 0) {
+        // le 1er element (i=0) craDay : day = month
+        // a partir de i = 1, day = month + i 
+        let i = 0;
+        cra.craDays.forEach((craDay, i) => {
+          craDay.day = this.utils.addDays(cra.month, i);
+          i++;
         })
+
       }
     }
   }
