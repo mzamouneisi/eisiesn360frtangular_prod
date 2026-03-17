@@ -182,8 +182,11 @@ export class UtilsService {
     return this.setTime0ToDate(lastMonthFirstDay);
   }
 
-  getDateFirstDay(date: Date) {
-    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+  getDateFirstDay(date: any) {
+    const d: Date = this.getDate(date);
+    if (!d) return null;
+
+    const firstDay = new Date(d.getFullYear(), d.getMonth(), 1);
     return this.setTime0ToDate(firstDay);
   }
 
