@@ -168,6 +168,8 @@ export class CraService {
     console.log("getCraDayByDate : cra, date : ", cra, date)
     let craDay: CraDay;
 
+    this.majNewCra(cra, date);
+
     if (cra != null && cra.craDays != null) {
       for (let i = 0; i < cra.craDays.length; i++) {
         if (this.utils.formatDate(date) == this.utils.formatDate(cra.craDays[i].day)) {
@@ -176,12 +178,19 @@ export class CraService {
         }
       }
     }
-    // else {
-    //   craDay = new CraDay();
-    //   craDay.day = date;
-    // }
 
     return craDay;
+  }
+
+  majNewCra(cra: Cra, date: Date) {
+    if(cra && cra.id == null && date) {
+      cra.month = date;
+      if(cra.craDays && cra.craDays.length > 0) {
+        cra.craDays.forEach(craDay => {
+          craDay.day = date;
+        })
+      }
+    }
   }
 
   public setCraDayInCraByDate(cra: Cra, date: Date, craDay: CraDay, isEraseOldActivities: boolean): boolean {
