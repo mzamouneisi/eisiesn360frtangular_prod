@@ -344,6 +344,19 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
       console.log("DBG: initParams: mode new Cra ")
       this.currentCra = new Cra();
       this.isAdd = "true"
+
+      this.currentCra.month = this.viewDate;
+      if (this.typeCra == 'CONGE') {
+        this.currentCra.type = 'CONGE';
+      } else {
+        this.currentCra.type = 'CRA';
+      }
+
+      console.log("DBG: initParams: new currentCra ", this.currentCra)
+
+    } else {
+      console.log("DBG: initParams: mode edit Cra ")
+      this.initCra(this.currentCra);
     }
 
     // save pour la navigation :
@@ -496,6 +509,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
       this.events = [];
       // console.log("+++ initCra currentCra.craDays", currentCra.craDays);
       currentCra.craDays.forEach((v, k) => {
+        v.day = this.viewDate;
         if (v.craDayActivities != null) {
           v.craDayActivities.forEach((value, index) => {
             // ////////console.log("+++ initCra av setEvent v, value:", v, value);
