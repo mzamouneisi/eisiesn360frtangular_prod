@@ -1,19 +1,40 @@
-[2026-03-16 12:38:46]  Starting deployment of eisiesn360frtangular_prod with comment: correction_url_front
-[2026-03-16 12:38:46]  Fichier de LOG : eisiesn360frtangular_prod.log
-[2026-03-16 12:38:46]  Copying environment files from development...
+[2026-03-17 12:30:56]  Starting deployment of eisiesn360frtangular_prod with comment: add_log_in_click_day_on_cal
+[2026-03-17 12:30:56]  Fichier de LOG : eisiesn360frtangular_prod.log
+[2026-03-17 12:30:56]  Copying environment files from development...
 Standard copy: Only newer or modified files will be copied.
 sending incremental file list
+./
+TODO.txt
+        2788 100%    0.00kB/s    0:00:00        2788 100%    0.00kB/s    0:00:00 (xfer#1, to-check=838/847)
+deploy_front_prod.sh
+        2465 100%  171.94kB/s    0:00:00        2465 100%  171.94kB/s    0:00:00 (xfer#2, to-check=829/847)
+src/
+src/app/compo/_utils/table-viewer/table-custom.css
+         928 100%   60.42kB/s    0:00:00         928 100%   60.42kB/s    0:00:00 (xfer#3, to-check=645/847)
+src/app/compo/_utils/table-viewer/table-viewer.component.html
+        8337 100%  508.85kB/s    0:00:00        8337 100%  508.85kB/s    0:00:00 (xfer#4, to-check=643/847)
+src/app/compo/_utils/table-viewer/table-viewer.component.ts
+       24315 100%    1.36MB/s    0:00:00       24315 100%    1.36MB/s    0:00:00 (xfer#5, to-check=641/847)
+src/app/compo/cra/add-multi-date/add-multi-date.component.ts
+        8272 100%  448.78kB/s    0:00:00        8272 100%  425.16kB/s    0:00:00 (xfer#6, to-check=498/847)
+src/app/compo/cra/cra-form/cra-form-cal.component.ts
+       32768  45%  347.83kB/s    0:00:00       72555 100%  457.13kB/s    0:00:00 (xfer#7, to-check=491/847)
+src/app/layout/footer/
+src/app/layout/footer/footer.component.ts
+         522 100%    2.79kB/s    0:00:00         522 100%    2.79kB/s    0:00:00 (xfer#8, to-check=276/847)
+src/app/service/cra.service.ts
+       12309 100%   65.33kB/s    0:00:00       12309 100%   65.33kB/s    0:00:00 (xfer#9, to-check=198/847)
 src/environments/
 src/environments/environment.prod.ts
-         731 100%    0.00kB/s    0:00:00         731 100%    0.00kB/s    0:00:00 (xfer#1, to-check=772/2307)
+         731 100%    3.86kB/s    0:00:00         731 100%    3.86kB/s    0:00:00 (xfer#10, to-check=1/847)
 src/environments/environment.ts
-        1437 100%    1.37MB/s    0:00:00        1437 100%    1.37MB/s    0:00:00 (xfer#2, to-check=771/2307)
+        1435 100%    7.53kB/s    0:00:00        1435 100%    7.53kB/s    0:00:00 (xfer#11, to-check=0/847)
 
-sent 53209 bytes  received 430 bytes  35759.33 bytes/sec
-total size is 37564439  speedup is 700.32
-[2026-03-16 12:38:47]  Starting deployment process...
-[2026-03-16 12:38:47]  Saving environment files...
-[2026-03-16 12:38:47]  Setting production URL in environment.prod.ts...
+sent 151766 bytes  received 405 bytes  101447.33 bytes/sec
+total size is 11552072  speedup is 75.92
+[2026-03-17 12:30:57]  Starting deployment process...
+[2026-03-17 12:30:57]  Saving environment files...
+[2026-03-17 12:30:58]  Setting production URL in environment.prod.ts...
 
     run build ...
     cmd : npx ng build --configuration production --output-path docs --base-href . 
