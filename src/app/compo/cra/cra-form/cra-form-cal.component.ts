@@ -495,15 +495,17 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
       // console.log("+++ initCra viewDate", this.viewDate);
       this.events = [];
       // console.log("+++ initCra currentCra.craDays", currentCra.craDays);
-      currentCra.craDays.forEach((v, k) => {
-        if (v.craDayActivities != null) {
-          v.craDayActivities.forEach((value, index) => {
+      currentCra.craDays.forEach((craDay, k) => {
+        if (craDay.craDayActivities != null) {
+          craDay.craDayActivities.forEach((craActivity, index) => {
             // ////////console.log("+++ initCra av setEvent v, value:", v, value);
-            this.setEvent(v, value, false);
-            // console.log("+++ initCra ap setEvent v, k, value : ", v, k, value);
+            this.setEvent(craDay, craActivity, false);
+            // console.log("+++ initCra ap setEvent craDay, index, craActivity : ", craDay, index, craActivity);
           })
         }
       })
+
+      this.craService.majNewCra(this.currentCra, this.viewDate);
 
       this.initDatesDebFinMultiDates();
 
