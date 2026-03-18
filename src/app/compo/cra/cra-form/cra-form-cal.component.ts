@@ -505,8 +505,6 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
         }
       })
 
-      this.craService.majNewCra(this.currentCra, this.viewDate);
-
       this.initDatesDebFinMultiDates();
 
       this.statusHistoJsonToTab()
@@ -605,9 +603,11 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
 
       this.statusHistoJsonToTab()
 
+      this.craService.majNewCra(this.currentCra, this.viewDate);
+
       this.showCra(craInDateView);
 
-      // this.addErrorTitleMsg("Error Add " + this.getLabelByType(), "On ne peut pas ajouter un nouveau "+this.getLabelByType()+" lorsqu'il y'a deja un CRA valide ce mois-ci !")
+      // this.addErrorTitleMsg("Error Add " + this.getLabelByType(), "On ne peut pas ajouter un nouveau "+this.getLabelByType+" lorsqu'il y'a deja un CRA valide ce mois-ci !")
 
       console.log("showCra valide fin")
 
@@ -621,6 +621,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
           if (data != null && data.body != null && data.body.result != null) {
             console.log("we have a new cra from initCra du server. data", data)
             this.currentCra = data.body.result;
+            this.craService.majNewCra(this.currentCra, this.viewDate);
 
             this.statusHistoJsonToTab()
 
@@ -632,6 +633,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
             this.currentCra = new Cra();
             this.setMonthCurentCraIfNull();
             this.events = [];
+            this.craService.majNewCra(this.currentCra, this.viewDate);
           }
 
           console.log(label + " currentCra : ", this.currentCra)
@@ -658,6 +660,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
             this.addCongesValidOfDate(this.viewDate);
 
             this.initCra(this.currentCra);
+            this.craService.majNewCra(this.currentCra, this.viewDate);
             this.process();
             this.refreshMe();
 
