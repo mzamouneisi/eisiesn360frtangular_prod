@@ -509,6 +509,8 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
 
       this.statusHistoJsonToTab()
 
+      // this.craService.majNewCra(this.currentCra, this.viewDate);
+
     }
     console.log("+++ initCra fin");
   }
@@ -599,29 +601,29 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
     console.log(label + " craInDateView", craInDateView)
 
     if (craInDateView != null) {
-      console.log("showCra valide deb")
+      console.log(label + " showCra valide deb")
 
       this.statusHistoJsonToTab()
 
-      this.craService.majNewCra(this.currentCra, this.viewDate);
+      // this.craService.majNewCra(this.currentCra, this.viewDate);
 
       this.showCra(craInDateView);
 
       // this.addErrorTitleMsg("Error Add " + this.getLabelByType(), "On ne peut pas ajouter un nouveau "+this.getLabelByType+" lorsqu'il y'a deja un CRA valide ce mois-ci !")
 
-      console.log("showCra valide fin")
+      console.log(label + " showCra valide fin")
 
     } else {
       this.beforeCallServer(label)
-      console.log("before getNewCraOfDate : viewDate ", this.viewDate)
+      console.log(label + " before getNewCraOfDate : viewDate ", this.viewDate)
       this.craService.getNewCraOfDate(this.viewDate).subscribe(
         data => {
           console.log(label + " : viewDate, data : ", this.viewDate, data)
           this.afterCallServer(label, data)
           if (data != null && data.body != null && data.body.result != null) {
-            console.log("we have a new cra from initCra du server. data", data)
             this.currentCra = data.body.result;
-            this.craService.majNewCra(this.currentCra, this.viewDate);
+            console.log(label + " we have a new cra from initCra du server. currentCra : ", this.currentCra)
+            // this.craService.majNewCra(this.currentCra, this.viewDate);
 
             this.statusHistoJsonToTab()
 
@@ -629,30 +631,32 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
             // this.currentCra.month = new Date(this.currentCra.monthStr);
             this.setMonthCurentCraIfNull();
           } else {
-            console.log("set new Cra of this viewDate ", this.viewDate)
+            console.log(label + " data null : set new Cra of this viewDate ", this.viewDate)
             this.currentCra = new Cra();
             this.setMonthCurentCraIfNull();
             this.events = [];
-            this.craService.majNewCra(this.currentCra, this.viewDate);
+            // this.craService.majNewCra(this.currentCra, this.viewDate);
           }
 
           console.log(label + " currentCra : ", this.currentCra)
 
           if (!this.getError() || this.getError().length == 0) {
+            console.log(label+" NO_ERROR : goto showCra", this.currentCra)
             // this.addActivitiesValidOfThisMonth();
             // this.currentCra.month = this.viewDate;
 
-            ////////console.log(label+" goto showCra", this.currentCra)
             // this.dataSharingService.showCra(this.currentCra);
 
             this.setMonthCurentCraIfNull();
 
             let craContext: CraContext = new CraContext();
+            console.log(label+" +++++ craContext:", craContext)
+
             let month = this.utils.getDate(this.currentCra.month);
             craContext.cra = this.currentCra;
             craContext.viewDate = month;
-            // //////////console.log("+++++ showCra cra, month:", cra, month)
             craContext.events = [];
+            console.log(label+" +++++ craContext after setting viewDate and events:", craContext)
             this.dataSharingService.onCraInit(craContext);
             // this.router.navigate(["/cra_form"])
             ////////console.log("showCra fin", cra)
@@ -660,7 +664,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
             this.addCongesValidOfDate(this.viewDate);
 
             this.initCra(this.currentCra);
-            this.craService.majNewCra(this.currentCra, this.viewDate);
+            // this.craService.majNewCra(this.currentCra, this.viewDate);
             this.process();
             this.refreshMe();
 
@@ -1358,6 +1362,8 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
       if (isLanceProcess) {
         this.process();
       }
+    }else {
+      console.log("++++ addActivity KO craDayActivity=", craDayActivity)
     }
 
   }
@@ -1389,7 +1395,9 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
       }
 
       this.currentCra = this.craService.updateCraDay(this.currentCra, this.craDay);
-      console.log(this.currentCra)
+      console.log("addCurrentActivity: currentCra after updateCraDay:", this.currentCra)
+      this.process();
+      this.refreshMe();
     } else {
       ////console.log("date deb" , this.addMultiDateStartDate)
       ////console.log("date fin" , this.addMultiDateEndDate)
@@ -1427,8 +1435,10 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
           this.craDayActivity = cda;
           this.addActivity(this.craDayActivity, this.craDay, false);
         } else {
-          console.log("addActivityInDates: can add KO : this.craDay, craDayActivity : ", this.craDay, craDayActivity)
+          console.log("addActivityInDates: can add KO : Cra Day Not Open : this.craDay, craDayActivity : ", this.craDay, craDayActivity)
         }
+      }else {
+        console.log("addActivityInDates: can add KO : this.craDay, craDayActivity : ", this.craDay, craDayActivity)
       }
     }
     this.process();
@@ -1511,7 +1521,7 @@ export class CraFormCalComponent extends MereComponent implements CraObserver {
         let craDayActivities: CraDayActivity[] = craDay.craDayActivities;
 
         for (let craDayActivity of craDayActivities) {
-          if ( craDayActivity.activity.type && !craDayActivity.activity.type.congeDay) {
+          if (craDayActivity.activity.type && !craDayActivity.activity.type.congeDay) {
             this.utilsIhm.info("isCraValid : Oops,verify your Conges plz. All days must be conge type.", null, null);
             this.currentCra.validByConsultant = null;
             this.currentCra.dateValidationConsultant = null;
