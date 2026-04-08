@@ -2575,3 +2575,103 @@ total size is 27664022  speedup is 1.44
     cmd : npx ng build --configuration production --output-path docs --base-href . 
 
 - Generating browser application bundles (phase: setup)...
+√ Browser application bundle generation complete.
+√ Browser application bundle generation complete.
+- Copying assets...
+√ Copying assets complete.
+- Generating index html...
+√ Index html generation complete.
+
+Initial Chunk Files               | Names         |      Size
+main.6794b5be7455baf74732.js      | main          |   2.23 MB
+styles.3725c67f92f42487742b.css   | styles        | 418.75 kB
+polyfills.eda811ed7540e2e09311.js | polyfills     |  32.84 kB
+runtime.d6f70c3195264758aac6.js   | runtime       |   1.09 kB
+
+| Initial Total |   2.68 MB
+
+Build at: 2026-03-31T10:02:30.175Z - Hash: 7e223b83008f288aa284 - Time: 128099ms
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/app/compo/administratifDocumentation/admin-doc-form/admin-doc-form.component.css exceeded maximum budget. Budget 5.00 kB was not met by 3.35 kB with a total of 8.35 kB.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/app/compo/dashboard/dashboard.component.css exceeded maximum budget. Budget 5.00 kB was not met by 3.38 kB with a total of 8.38 kB.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/authorization/authorization.types.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/core/model/cra-context.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/FileUpload.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/activity-over-time.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/activity.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/activityType.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/address.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/category.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/categoryDoc.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/client.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/consultant.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/cra-day-activity.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/cra-day.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/cra-status-histo.model.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/cra.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/document.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/esn.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/msg.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/noteFrais.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/notification.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/payementMode.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: C:/Users/mza/Documents/home/github/eisiesn360frtangular_prod/src/src/app/model/project.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Warning: initial exceeded maximum budget. Budget 2.00 MB was not met by 692.49 kB with a total of 2.68 MB.
+
+
+[2026-03-31 12:02:30]  Saving changes to git...
+warning: in the working copy of 'install_nodejs_14.bat', LF will be replaced by CRLF the next time Git touches it
+[prod 662646e] debug_holidays
+ 84 files changed, 3018 insertions(+), 92 deletions(-)
+ rename docs/{main.2477feb652098cd66847.js => main.6794b5be7455baf74732.js} (61%)
+To github-pro:mzamouneisi/eisiesn360frtangular_prod.git
+   3ab97e1..662646e  prod -> prod
+[2026-03-31 12:02:53]  Restoring environment files...
+[2026-03-31 12:02:53]  Deployment completed successfully.
+[2026-03-31 12:02:54]  Restoring environment files...

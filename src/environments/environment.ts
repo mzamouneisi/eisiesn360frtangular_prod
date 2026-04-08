@@ -18,12 +18,12 @@ const url_dev = 'https://esn360-backend-dev.whiteforest-96ad5fb7.francecentral.a
 const url_main = url_dev 
 const url_prod = 'https://esn360-backend-prod.whiteforest-96ad5fb7.francecentral.azurecontainerapps.io/esn360/'
 // const myUrl = urlAzure
-const url = url_prod
+const url = urlLocal
 
 const urlFront_dev = 'https://mzamouneisi.github.io/eisiesn360frtangular'
 const urlFront_main = urlFront_dev
 const urlFront_prod = 'https://mzamouneisi.github.io/eisiesn360frtangular_prod'
-const urlFront = urlFront_prod
+const urlFront = urlFront_dev
 
 export const environment = {
   production: true,
